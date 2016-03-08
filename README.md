@@ -10,7 +10,7 @@ Installation:
 1. Install dependencies:
 npm install
 
-2. Start NodeJS server
+2. Start NodeJS server:
 node server
 
 Events:
