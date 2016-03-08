@@ -30,10 +30,12 @@
   align-items: flex-start;
   text-align: left;
   font-size: small;
-  margin: 2%; }
+  margin: 2%;
+  background-color: #ff477c;
+  display: none; }
 
 .messageHolderVisible {
-  background-color: #ff477c; }
+  display: inline; }
 
 .dropfileshere, .dropfileshereNoColor {
   display: flex;
@@ -88,16 +90,15 @@ section:first-line {
   width: 12%;
   height: 12%;
   z-index: 2;
-  position: absolute;
-  opacity: 0.8; }
+  position: absolute; }
 
 progress[value]::-webkit-progress-value {
   background-color: #ff477c;
   opacity: 1; }
 
 progress[value]::-webkit-progress-bar {
-  background-color: #ff477c;
-  opacity: 0.4; }
+  background-color: #f5b3b4;
+  opacity: 0.6; }
 
 .progressVal {
   text-align: center;
@@ -109,3 +110,14 @@ progress[value]::-webkit-progress-bar {
 
 .elementHide {
   display: none; }
+
+p {
+  margin: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.successStatusMsg {
+  color: darkgreen; }
+
+.errorStatusMsg {
+  color: red; }

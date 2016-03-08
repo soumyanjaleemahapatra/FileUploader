@@ -2,12 +2,12 @@
 $defaultFont:"Roboto";
 $defaultMargin:2%;
 $elementWidth:99%;
-//$imageWidth:150px;
 $imageWidth:12%;
 $imageHeight:12%;
-//$imageHeight:100px;
 $statusColor:#ff477c;
-$opacity:0.4;
+$successColor:darkgreen;
+$errorColor:red;
+$opacity:0.6;
 
 .componentContainer{
   display:flex;
@@ -18,14 +18,14 @@ $opacity:0.4;
   text-align: center;
   font-family: $defaultFont, sans-serif;
   background-color: #fff;
-  }
+}
 
 #dropText{
   text-align: center;
   align-self:center;
   margin:25%;
   color:darkslategrey;
-  }
+}
 
 .fileSelector {
   height:20px;
@@ -45,32 +45,34 @@ $opacity:0.4;
   text-align: left;
   font-size:small;
   margin:$defaultMargin;
+  background-color:$statusColor;
+  display:none;
 }
 
 .messageHolderVisible{
   @extend .messageHolder;
-  background-color:$statusColor;
+  display:inline;
 }
 
 .dropfileshere{
-   display: flex;
-   flex-direction: column;
-   flex:1;
-   min-height:70vh;
-   width:$elementWidth;
-   justify-content: flex-start;
-   align-items:flex-start;
-   text-align: center;
-   font-size:xx-large;
-   font-weight: 500;
-   font-family: $defaultFont, serif;
-   background-color:#f1f1f1;
- }
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  min-height:70vh;
+  width:$elementWidth;
+  justify-content: flex-start;
+  align-items:flex-start;
+  text-align: center;
+  font-size:xx-large;
+  font-weight: 500;
+  font-family: $defaultFont, serif;
+  background-color:#f1f1f1;
+}
 
- .dropfileshereNoColor{
- @extend .dropfileshere;
- background-color:#fff;
- }
+.dropfileshereNoColor{
+  @extend .dropfileshere;
+  background-color:#fff;
+}
 
 
 .filePreviewAndProgress
@@ -87,7 +89,7 @@ $opacity:0.4;
 
 section{
   text-align:left;
- // margin-left:$defaultMargin;
+  // margin-left:$defaultMargin;
   margin-left:12%;
   color:black;
   width:70%;
@@ -108,7 +110,7 @@ section:first-line{
   width: $imageWidth;
   z-index: 0;
   position: absolute;
-  }
+}
 
 .progressBar[value] {
   -webkit-appearance: none;
@@ -117,30 +119,43 @@ section:first-line{
   height:$imageHeight;
   z-index:2;
   position: absolute;
-  opacity:$opacity*2;
- }
+}
 
- progress[value]::-webkit-progress-value {
-     background-color: $statusColor;
-     opacity:$opacity+0.6;
- }
+progress[value]::-webkit-progress-value {
+  background-color: $statusColor;
+  opacity:$opacity+0.4;
+}
 
- progress[value]::-webkit-progress-bar {
-      background-color: $statusColor;
-      opacity:$opacity;
-  }
+progress[value]::-webkit-progress-bar {
+  background-color: #f5b3b4;
+  opacity:$opacity;
+}
 
 .progressVal {
-    text-align:center;
-    align-self:center;
-    position: absolute;
-    z-index:3;
-    color:#fff;
-   // margin:$defaultMargin;
+  text-align:center;
+  align-self:center;
+  position: absolute;
+  z-index:3;
+  color:#fff;
+  // margin:$defaultMargin;
   margin:1%;
 
- }
+}
 
- .elementHide {
-     display:none;
-  }
+.elementHide {
+  display:none;
+}
+
+p{
+  margin:0px;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+
+.successStatusMsg{
+  color:$successColor;
+}
+
+.errorStatusMsg{
+  color:$errorColor;
+}
